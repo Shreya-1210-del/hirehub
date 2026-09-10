@@ -1,160 +1,91 @@
-# 📌 README — Job Portal (React + Django REST API)
+# HireHub
 
-## 📘 Project Overview
+A full-stack job recruitment platform built with React and Django REST Framework.
 
-**Job Portal** is a full-stack web application built with **React (Vite + Tailwind CSS)** on the frontend and **Django + Django REST Framework** on the backend.
-This project enables users to **register, login, view job listings, and apply for jobs**. It also includes secure REST APIs, PostgreSQL database integration, and real-world app flows.
-
-Users can easily explore job opportunities while the backend securely handles authentication and data storage.
+HireHub is designed to connect candidates with job opportunities through a modern web interface and a REST-based backend. The application demonstrates full-stack development using React on the frontend and Django REST Framework on the backend.
 
 ---
 
-## 📌 🧠 Features
+## Overview
 
-✅ User Registration (React form + API)
-✅ Login & Authentication (JWT or Token based)
-✅ Job Listing API
-✅ Apply Job Endpoint
-✅ Prevent Duplicate Applications
-✅ PostgreSQL Integration
-✅ API Testing with Postman
-✅ Frontend UI with Tailwind CSS and React Router
+HireHub follows a client-server architecture where the React frontend communicates with a Django REST API.
 
----
+The frontend is responsible for the user interface, navigation, user interactions, and communication with the backend.
 
-## 🛠 Tech Stack
+The backend handles authentication, application logic, job-related data, database operations, and REST API responses.
 
-| Layer        | Technology                             |
-| ------------ | -------------------------------------- |
-| Frontend     | React (Vite)                           |
-| UI Framework | Tailwind CSS                           |
-| Routing      | React Router                           |
-| Backend      | Django                                 |
-| API          | Django REST Framework                  |
-| Database     | PostgreSQL (Production) & SQLite (Dev) |
-| API Testing  | Postman                                |
+The project is being developed as a practical full-stack software engineering project with an emphasis on clean architecture, reusable components, REST APIs, database interaction, and authentication.
 
 ---
 
-## 🔧 Installation & Setup
+## Features
 
-### ✅ 1. Clone the Repository
-
-```bash
-git clone https://github.com/jvlcode/job-portal.git
-cd job-portal
-```
-
----
-
-### 🧩 2. Backend Setup (Django)
-
-```bash
-cd backend
-python -m venv venv
-source venv/bin/activate        # (Windows: venv\Scripts\activate)
-pip install -r requirements.txt
-```
-
-Create `.env` with database credentials:
-
-```
-SECRET_KEY=your_secret_key
-DEBUG=True
-DB_NAME=postgres_db_name
-DB_USER=postgres_user
-DB_PASSWORD=password
-DB_HOST=localhost
-DB_PORT=5432
-```
-
-Run database migrations:
-
-```bash
-python manage.py makemigrations
-python manage.py migrate
-```
-
-Start backend server:
-
-```bash
-python manage.py runserver
-```
+- User registration
+- User authentication
+- User login
+- Job listings
+- Job details
+- Job application functionality
+- Duplicate application prevention
+- User-related API functionality
+- RESTful backend APIs
+- React Router navigation
+- Responsive user interface
+- Tailwind CSS styling
+- PostgreSQL database support
+- SQLite support for development
+- API testing with Postman
 
 ---
 
-### 🚀 3. Frontend Setup (React)
+## Tech Stack
 
-```bash
-cd ../frontend
-npm install
-npm run dev
-```
+### Frontend
 
-* Visit: `http://localhost:3000`
+- React
+- Vite
+- JavaScript
+- Tailwind CSS
+- React Router
 
----
+### Backend
 
-## 📌 Folder Structure
+- Python
+- Django
+- Django REST Framework
 
-```
-job-portal/
-├── backend/           # Django backend
-│   ├── manage.py
-│   ├── jobportal/     # Django app
-│   └── requirements.txt
-├── frontend/          # React frontend (Vite)
-│   ├── src/
-│   └── package.json
-└── README.md
-```
+### Database
 
----
+- PostgreSQL
+- SQLite
 
-## 🔗 API Endpoints (Examples)
+### Tools
 
-| Endpoint           | Method | Description       |
-| ------------------ | ------ | ----------------- |
-| `/api/register/`   | POST   | Register new user |
-| `/api/login/`      | POST   | Login & get token |
-| `/api/jobs/`       | GET    | List all jobs     |
-| `/api/jobs/apply/` | POST   | Apply for a job   |
-| `/api/user/`       | GET    | User profile      |
+- Git
+- GitHub
+- Postman
+- VS Code
+- npm
 
 ---
 
-## 🧪 Testing with Postman
+## Architecture
 
-1. Import Postman collection (if provided)
-2. Test Register API
-3. Test Login & Save Token
-4. Use Auth Token to test Job Listing API
-5. Apply for Jobs securely
+HireHub uses a separated frontend and backend architecture.
 
----
-
-## 🎯 What You Will Learn
-
-✔ Connecting React with Django REST API
-✔ Authentication in Django & React
-✔ Using Tailwind CSS + React UI
-✔ Deploy-ready full stack project
-✔ Real world API design & workflows
-
----
-
-## 💡 Contribution
-
-Contributions are welcome!
-To contribute:
-
-1. Fork the repo
-2. Create a feature branch
-3. Submit a pull request
-
----
-
-## ⭐ Support / Feedback
-
-If you found this project helpful, please give it a ⭐
-Let me know if you want **Level-2 features**, deployment setup, or advanced enhancements!
+```text
+                    HireHub
+                       |
+          +------------+------------+
+          |                         |
+          v                         v
+   React Frontend            Django Backend
+          |                         |
+          |      HTTP Requests      |
+          +-------------------------+
+                                    |
+                                    v
+                           Django REST API
+                                    |
+                                    v
+                                Database
